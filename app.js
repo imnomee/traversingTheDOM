@@ -7,6 +7,34 @@ const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 
+const lis = listUl.children;
+
+
+function attachListItemButtons(li) {
+    let up = document.createElement('button');
+    let down  = document.createElement('button');
+    let remove = document.createElement('button');
+
+    up.className= 'up';
+    up.textContent = 'UP'
+    li.appendChild(up);
+
+    down.className = 'down';
+    down.textContent = 'DOWN';
+    li.appendChild(down);
+
+    remove.className = 'remove';
+    remove.textContent = 'REMOVE';
+    li.appendChild(remove);
+
+
+}
+
+for(let i=0; i<lis.length; i++){
+    attachListItemButtons(lis[i]);
+}
+
+
 listUl.addEventListener('click', (event) => {
     if (event.target.tagName == 'BUTTON') {
         //If the button class name is remove. delete it
@@ -57,6 +85,8 @@ addItemButton.addEventListener('click', () => {
     let ul = document.getElementsByTagName('ul')[0];
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
-    ul.appendChild(li);
+    attachListItemButtons(li);
+    ul.append(li);
+
     addItemInput.value = '';
 });
