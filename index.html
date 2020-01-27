@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>JavaScript and the DOM</title>
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <h1 id="myHeading">JavaScript and the DOM</h1>
     <p>Making a web page interactive</p>
     <button id="toggleList">Hide list</button>
     <div class="list">
-      <p class="description">Things that are purple:</p>
-      <input type="text" class="description">
-      <button class="description">Change list description</button>
-      <ul>
-        <li>grapes <button>Remove Item </button></li>
-        <li>amethyst <button>Remove Item </button></li>
-        <li>lavender <button>Remove Item </button></li>
-        <li>plums <button>Remove Item </button></li>
-      </ul>
-      <input type="text" class="addItemInput">
-      <button class="addItemButton">Add item</button>
-      <button class="removeItemButton">Remove last item</button>
+        <p class="description">Things that are purple:</p>
+        <input type="text" class="description">
+        <button class="description">Change list description</button>
+        <ul>
+            <li>grapes
+                <button class='up'>Move Up </button>
+                <button class='down'>Move Down </button>
+                <button class='remove'>Remove Item </button>
+            </li>
+            <li>amethyst
+                <button class='up'>Move Up </button>
+                <button class='down'>Move Down </button>
+                <button class='remove'>Remove Item </button>
+            <li>lavender
+                <button class='up'>Move Up </button>
+                <button class='down'>Move Down </button>
+                <button class='remove'>Remove Item </button>
+            <li>plums
+                <button class='up'>Move Up </button>
+                <button class='down'>Move Down </button>
+                <button class='remove'>Remove Item </button>
+            </li>
+        </ul>
+            <input type="text" class="addItemInput">
+            <button class="addItemButton">Add item</button>
     </div>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
