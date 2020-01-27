@@ -6,16 +6,22 @@ const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
+const firstListItem = listUl.firstElementChild;
+const lastListItem = listUl.lastElementChild;
 
 const lis = listUl.children;
 
 
+firstListItem.style.backgroundColor = 'lightskyblue';
+lastListItem.style.backgroundColor = 'lightgrey';
+
+
 function attachListItemButtons(li) {
     let up = document.createElement('button');
-    let down  = document.createElement('button');
+    let down = document.createElement('button');
     let remove = document.createElement('button');
 
-    up.className= 'up';
+    up.className = 'up';
     up.textContent = 'UP'
     li.appendChild(up);
 
@@ -30,10 +36,10 @@ function attachListItemButtons(li) {
 
 }
 
-for(let i=0; i<lis.length; i++){
+for (let i = 0; i < lis.length; i++) {
+
     attachListItemButtons(lis[i]);
 }
-
 
 listUl.addEventListener('click', (event) => {
     if (event.target.tagName == 'BUTTON') {
@@ -48,6 +54,7 @@ listUl.addEventListener('click', (event) => {
             let li = event.target.parentNode;
             let prevLi = li.previousElementSibling;
             let ul = li.parentNode;
+
             // if previous element is true, move it to that place
             if (prevLi) {
                 ul.insertBefore(li, prevLi);

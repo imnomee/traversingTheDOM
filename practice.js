@@ -6,3 +6,16 @@ list.addEventListener('click', function(e) {
     prevSib.className = 'highlight';
   }
 });
+
+/* both work the same
+ul.removeElement(ul.firstElementChild);
+
+ul.removeElement(ul.children[0]);
+*/
+
+var section = document.querySelector('section');
+var paragraphs = section.children;
+
+for(let i = 0; i<paragraphs.length; i++){
+  paragraphs[i].style.color = 'blue';
+}
