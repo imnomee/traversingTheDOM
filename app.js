@@ -24,23 +24,16 @@ listUl.addEventListener('click', (event) => {
             if (prevLi) {
                 ul.insertBefore(li, prevLi);
             }
-
         }
         //if the button class name is down, move it down
         if (event.target.className == 'down') {
             let li = event.target.parentNode;
-            // here we are getting elements next and then next element. so we are jumping two elements up.
-            let nextLi = li.nextElementSibling.nextElementSibling;
-            // let nextLi = li.nextElementSibling;
+            let nextLi = li.nextElementSibling;
             let ul = li.parentNode;
-            //PROBLEM HERE, IF THERE IS NOT NEXT LI IN 2 STEPS IT WONT WORK
-            // here we are using nextLi (2 steps up) and going one step back.
-            //if (nextLi) {
-            ul.insertBefore(li, nextLi);
-            // }
-
-
-
+            //if next element is true, bring it up
+            if (nextLi) {
+                ul.insertBefore(nextLi, li);
+            }
         }
     }
 });
